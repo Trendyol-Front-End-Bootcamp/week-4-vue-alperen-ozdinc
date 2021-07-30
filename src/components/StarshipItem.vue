@@ -67,8 +67,14 @@ export default {
   z-index: 1;
   position: relative;
   top: 100px;
+  box-shadow:  10px 10px 20px #333,
+             -10px -10px 20px #333;
+  &:hover{
+    box-shadow: none;
+  }
+
   .starship-img {
-    width: 300px;
+    width: 280px;
   }
 
   .starship-data {

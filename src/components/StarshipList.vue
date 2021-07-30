@@ -23,8 +23,8 @@ export default {
 <style lang="scss" scoped>
 .starship-list{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    gap: 60px;
 
 }
 </style>

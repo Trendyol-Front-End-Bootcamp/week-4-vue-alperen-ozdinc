@@ -23,6 +23,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
 .logo {
   transform: scale(0.65);
 }
@@ -41,7 +42,7 @@ export default {
   transform: scale(0.6);
   position:absolute;
   top: -220px;
-  right: -240px;
+  right: -220px;
   z-index: -1;
   opacity: 0.9;
   filter: blur(3px);

@@ -79,7 +79,10 @@ export default {
 <style lang="scss" scoped>
 @import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
 
-* {
+.starship-detail-scroller-container {
+  article{
+    text-align: center;
+  }
   color: #fff;
 }
 .title {
