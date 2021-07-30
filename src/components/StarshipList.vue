@@ -21,10 +21,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.starship-list{
-    display: grid;
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
-    gap: 60px;
-
+.starship-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  gap: 60px;
 }
 </style>

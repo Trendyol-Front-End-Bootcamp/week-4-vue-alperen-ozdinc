@@ -1,112 +1,110 @@
 <template>
-<div class="death-star">
-  <div class="wrapper">
-    <div class="lng"></div>
-    <div class="lng"></div>
-    <div class="lng"></div>
-    <div class="lng"></div>
-    <div class="trench"></div>
-    <div class="weapon"></div>
+  <div class="death-star">
+    <div class="wrapper">
+      <div class="lng"></div>
+      <div class="lng"></div>
+      <div class="lng"></div>
+      <div class="lng"></div>
+      <div class="trench"></div>
+      <div class="weapon"></div>
+    </div>
   </div>
-</div>
 </template>
 
 <script>
-export default {
-    
-}
+export default {};
 </script>
 
 <style lang="scss" scoped>
 $speed: 30s;
 
 html {
-  background-color:#000;
-  background-image:
-  radial-gradient(#fff, #fff 1px, transparent 1px),
-  radial-gradient(#fff, #fff 1px, transparent 1px),
-  radial-gradient(#fff, #fff 1px, transparent 1px),
-  radial-gradient(#fff, #fff 1px, transparent 1px);
-  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
+  background-color: #000;
+  background-image: radial-gradient(#fff, #fff 1px, transparent 1px),
+    radial-gradient(#fff, #fff 1px, transparent 1px),
+    radial-gradient(#fff, #fff 1px, transparent 1px),
+    radial-gradient(#fff, #fff 1px, transparent 1px);
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
   background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
-  height:100%;
+  height: 100%;
 }
 
 div {
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
 
 .death-star {
-  background-image:linear-gradient(#99a .5vmin, transparent .5vmin), linear-gradient(to right, #99a, #334);
-  border-radius:50%;
-  height:60vmin;
-  margin:20vmin;
+  background-image: linear-gradient(#99a 0.5vmin, transparent 0.5vmin),
+    linear-gradient(to right, #99a, #334);
+  border-radius: 50%;
+  height: 60vmin;
+  margin: 20vmin;
   perspective: 1000vmin;
   perspective-origin: 50%;
-  position:relative;
-  width:60vmin;
+  position: relative;
+  width: 60vmin;
   .wrapper {
-    height:100%;
-    left:0;
-    overflow:hidden;
-    position:absolute;
-    top:0;
+    height: 100%;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
     transform-style: preserve-3d;
-    width:100%;
-    z-index:0;
+    width: 100%;
+    z-index: 0;
     &:after {
-      box-shadow:-25vmin 0 25vmin #000 inset;
-      content:"";
-      height:100%;
-      left:0;
-      position:absolute;
-      top:0;
-      width:100%;
+      box-shadow: -25vmin 0 25vmin #000 inset;
+      content: "";
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
     }
     .trench {
-      border-bottom:solid 2vmin #99a;
-      border-top:solid 2vmin #99a;
-      box-shadow:0 1vmin 1vmin rgba(0,0,0,.5) inset;
-      box-sizing:content-box;
-      height:1vmin;
-      left:0;
+      border-bottom: solid 2vmin #99a;
+      border-top: solid 2vmin #99a;
+      box-shadow: 0 1vmin 1vmin rgba(0, 0, 0, 0.5) inset;
+      box-sizing: content-box;
+      height: 1vmin;
+      left: 0;
       // opacity:.5;
-      position:absolute;
-      top:28vmin;
-      width:100%;
+      position: absolute;
+      top: 28vmin;
+      width: 100%;
     }
     .lng {
-      border-left:solid 1px #99a;
-      border-radius:50%;
-      height:100%;
-      left:0;
-      position:absolute;
-      top:0;
-      width:100%;
+      border-left: solid 1px #99a;
+      border-radius: 50%;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
       &:nth-child(1) {
-        border-width:1vmin;
-        transform:rotateY(30deg);
+        border-width: 1vmin;
+        transform: rotateY(30deg);
       }
       &:nth-child(2) {
-        border-width:2vmin;
-        transform:rotateY(70deg);
+        border-width: 2vmin;
+        transform: rotateY(70deg);
       }
       &:nth-child(3) {
-        border-width:2vmin;
-        transform:rotateY(110deg);
+        border-width: 2vmin;
+        transform: rotateY(110deg);
       }
     }
     .weapon {
-      background-image:linear-gradient(to right, #334, #667);
-      border-radius:50%;
-      box-shadow:0 -2vmin 2vmin rgba(255,255,255,.25) inset;
-      height:20%;
-      left:40%;
-      position:absolute;
-      top:20%;
-      transform:rotateY(-25deg) translateZ(25vmin) rotateX(21deg);
-      width:20%;
-      z-index:1;
+      background-image: linear-gradient(to right, #334, #667);
+      border-radius: 50%;
+      box-shadow: 0 -2vmin 2vmin rgba(255, 255, 255, 0.25) inset;
+      height: 20%;
+      left: 40%;
+      position: absolute;
+      top: 20%;
+      transform: rotateY(-25deg) translateZ(25vmin) rotateX(21deg);
+      width: 20%;
+      z-index: 1;
     }
   }
 }

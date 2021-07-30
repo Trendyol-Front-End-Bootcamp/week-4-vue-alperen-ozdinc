@@ -1,23 +1,22 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import StarshipDetail from '../views/StarshipDetail.vue'
-
+import { createRouter, createWebHistory } from "vue-router";
+import Home from "../views/Home.vue";
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    name: "Home",
+    component: Home,
   },
   {
-    path: '/detail/:id',
-    name: 'StarshipDetail',
-    component: () => import(/* webpackChunkName: "about" */ '../views/StarshipDetail.vue')
-  }
-]
+    path: "/detail/:id",
+    name: "StarshipDetail",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/StarshipDetail.vue"),
+  },
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

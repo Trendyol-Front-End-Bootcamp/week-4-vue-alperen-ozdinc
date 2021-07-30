@@ -1,5 +1,5 @@
 <template>
-    <DeathStar class="header-death-star"/>
+  <DeathStar class="header-death-star" />
   <header>
     <a href="/" class="header-logo">
       <img class="logo" src="../assets/logo.png" alt="" />
@@ -12,18 +12,17 @@
 </template>
 
 <script>
-import DeathStar from './DeathStar.vue';
+import DeathStar from "./DeathStar.vue";
 
 export default {
   name: "Header",
   components: {
-    DeathStar
-  }
+    DeathStar,
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-
 .logo {
   transform: scale(0.65);
 }
@@ -38,9 +37,9 @@ export default {
     letter-spacing: 6px;
   }
 }
-.header-death-star{
+.header-death-star {
   transform: scale(0.6);
-  position:absolute;
+  position: absolute;
   top: -220px;
   right: -220px;
   z-index: -1;

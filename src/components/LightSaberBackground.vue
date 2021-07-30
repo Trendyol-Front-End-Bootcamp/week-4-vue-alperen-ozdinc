@@ -1,50 +1,49 @@
 <template>
-<div :class="[!show ? 'hide' : '', 'lightsaber left']">
-  <div class="plasma"></div>
-</div>
+  <div :class="[!show ? 'hide' : '', 'lightsaber left']">
+    <div class="plasma"></div>
+  </div>
   <div :class="[!show ? 'hide' : '', 'lightsaber top']">
-  <div class="plasma"></div>
-</div>
-<div :class="[!show ? 'hide' : '', 'lightsaber right']">
-  <div class="plasma"></div>
-</div>
-<div :class="[!show ? 'hide' : '', 'lightsaber bottom']">
-  <div class="plasma"></div>
-</div>
+    <div class="plasma"></div>
+  </div>
+  <div :class="[!show ? 'hide' : '', 'lightsaber right']">
+    <div class="plasma"></div>
+  </div>
+  <div :class="[!show ? 'hide' : '', 'lightsaber bottom']">
+    <div class="plasma"></div>
+  </div>
 </template>
 <script>
 export default {
-    name: 'LightSaberBackground',
-    props: {
-        show: Boolean
-    }
-    
-}
+  name: "LightSaberBackground",
+  props: {
+    show: Boolean,
+  },
+};
 </script>
 <style lang="scss" scoped>
-.hide{
-    display:none;
+.hide {
+  display: none;
 }
-.lightsaber { 
+.lightsaber {
   position: relative;
 
-  &.left{
+  &.left {
     position: relative;
-    left:-50%;
+    left: -50%;
     bottom: 63px;
     transform: rotate(270deg);
   }
-  &.right{
+  &.right {
     position: relative;
-    left:60%;
+    left: 60%;
     top: -105px;
-    transform:rotate(90deg);
+    transform: rotate(90deg);
   }
-    &.top{
+  &.top {
     position: relative;
     bottom: 250px;
   }
-      &.bottom{
+  &.bottom {
     position: relative;
     bottom: -70px;
   }
@@ -125,5 +124,5 @@ export default {
   to {
     box-shadow: 0 0 10px #e51115;
   }
-  }
+}
 </style>

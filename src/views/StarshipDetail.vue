@@ -1,5 +1,6 @@
 <template>
-  <div class="starship-detail-scroller-container">
+  <Lightspeed v-if="isLoading" />
+  <div v-else class="starship-detail-scroller-container">
     <div id="intro">
       A long time ago, in a galaxy far,<br />
       far away....
@@ -56,12 +57,17 @@
 
 <script>
 import { getSingleStarship } from "@/services/single-starship-service.js";
+import Lightspeed from "@/components/Lightspeed.vue";
 
 export default {
   name: "StarshipDetail",
+  components: {
+    Lightspeed,
+  },
   data() {
     return {
       starship: null,
+      isLoading: false,
     };
   },
   methods: {
@@ -71,7 +77,11 @@ export default {
     },
   },
   created() {
-    this.fetchSingleStarship(this.$route.params.id);
+    this.isLoading = true;
+    setTimeout(() => {
+      this.fetchSingleStarship(this.$route.params.id);
+      this.isLoading = false;
+    }, 2 * 1000);
   },
 };
 </script>
@@ -80,10 +90,10 @@ export default {
 @import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700);
 
 .starship-detail-scroller-container {
-  article{
+  article {
     text-align: center;
+    color: #fff;
   }
-  color: #fff;
 }
 .title {
   color: #ffe81f;
