@@ -1,30 +1,38 @@
 <template>
-<div class="container">
-      <div class="starship-card-container"
-      @mouseover="show = true" @mouseleave="show = false"
+  <router-link
+    :to="{
+      name: 'StarshipDetail',
+      params: { id: starship.url.split('starships/')[1].slice(0, -1) },
+    }"
+  >
+    <div class="container">
+      <div
+        class="starship-card-container"
+        @mouseover="show = true"
+        @mouseleave="show = false"
       >
-    <img
-      class="starship-img"
-      src="../assets/spaceship.png"
-      alt="Star Wars Starship Image"
-    />
-    <div class="starship-data">
-      <h3 class="starship-data-title">{{ starship.name }}</h3>
-      <p>
-        <span class="starship-data-title">Model:</span> {{ starship.model }}
-      </p>
-      <p>
-        <span class="starship-data-title">Hyperdrive Rating:</span>
-        {{ starship.hyperdrive_rating }}
-      </p>
-    </div>
-  </div>
-  <LightSaberBackground :show="show"/>
-</div>
+        <img
+          class="starship-img"
+          src="../assets/spaceship.png"
+          alt="Star Wars Starship Image"
+        />
+        <div class="starship-data">
+          <h3 class="starship-data-title">{{ starship.name }}</h3>
+          <p>
+            <span class="starship-data-title">Model:</span> {{ starship.model }}
+          </p>
+          <p>
+            <span class="starship-data-title">Hyperdrive Rating:</span>
+            {{ starship.hyperdrive_rating }}
+          </p>
+        </div>
+      </div>
+      <LightSaberBackground :show="show" /></div
+  ></router-link>
 </template>
 
 <script>
-import LightSaberBackground from './LightSaberBackground.vue';
+import LightSaberBackground from "./LightSaberBackground.vue";
 
 export default {
   name: "StarshipItem",
@@ -32,23 +40,23 @@ export default {
     starship: Object,
   },
   components: {
-      LightSaberBackground
+    LightSaberBackground,
   },
-  data(){
-      return {
-          show: false,
-      }
-  }
+  data() {
+    return {
+      show: false,
+    };
+  },
 };
 </script>
 <style lang="scss" scoped>
-.container{
+.container {
   position: relative;
   width: 300px;
   height: 400px;
-    &:hover{
-      transform: scale(1.05);
-      transition: 0.5s;
+  &:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
   }
 }
 
