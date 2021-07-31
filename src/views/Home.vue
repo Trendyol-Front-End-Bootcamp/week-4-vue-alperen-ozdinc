@@ -1,6 +1,7 @@
 <template>
-  <div class="home" id="home">
+  <div v-if="!isLoading" class="home" id="home">
     <StarshipList :starships="starships" />
+    <Pagination :pagination="pagination" @get-page="getPage" />
   </div>
 </template>
 
@@ -8,26 +9,38 @@
 // @ is an alias to /src
 import { getStarships } from "@/services/starships-service.js";
 import StarshipList from "@/components/StarshipList";
+import Pagination from "@/components/Pagination";
 
 export default {
   name: "Home",
   components: {
     StarshipList,
+    Pagination,
   },
   mounted() {},
   data() {
     return {
       starships: [],
-      page: 1,
-      previous: "",
-      next: "",
+      currentPage: 1,
+      pagination: null,
+      isLoading: false,
     };
   },
+  methods: {
+    async setStarshipData(url) {
+      this.isLoading = true;
+      const data = await getStarships(url);
+      const { previous, next, results } = data;
+      this.starships = results;
+      this.pagination = { previous, next };
+      this.isLoading = false;
+    },
+    getPage(url) {
+      this.setStarshipData(url);
+    },
+  },
   async created() {
-    const data = await getStarships();
-    this.starships = data.results;
-    this.previous = data.previous;
-    this.next = data.next;
+    this.setStarshipData();
   },
 };
 </script>
