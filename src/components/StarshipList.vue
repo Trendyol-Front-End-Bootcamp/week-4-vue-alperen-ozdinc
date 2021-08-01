@@ -4,6 +4,7 @@
       v-for="(starship, index) in starships"
       :key="index"
       :starship="starship"
+      class="starship-item"
     />
   </div>
 </template>
@@ -22,8 +23,14 @@ export default {
 </script>
 <style lang="scss" scoped>
 .starship-list {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(300px, 1fr));
-  gap: 60px;
+  // display: grid;
+  // grid-template-columns: repeat(3, minmax(300px, 1fr));
+  // gap: 60px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  .starship-item{
+    margin: 45px;
+  }
 }
 </style>

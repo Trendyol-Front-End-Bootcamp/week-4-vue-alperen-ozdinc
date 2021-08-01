@@ -5,8 +5,8 @@
       type="search"
       placeholder="Enter model or name"
       v-model="searchText"
-      @input="handleSubmit"
     />
+    <button class="btn">Search</button>
   </form>
 </template>
 
@@ -27,7 +27,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.search-area {
+.search-area, .btn {
   color: #ffe81f;
   position: relative;
   background: transparent;

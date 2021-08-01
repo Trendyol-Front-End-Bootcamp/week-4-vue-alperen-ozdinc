@@ -1,4 +1,5 @@
 <template>
+<Loading v-if="isLoading"/>
 <SearchArea @search-starship="searchStarshipText"/>
   <div v-if="!isLoading" class="home" id="home">
     <StarshipList :starships="starships" />
@@ -9,6 +10,7 @@
 <script>
 // @ is an alias to /src
 import { getStarships, searchStarship} from "@/services/index.js";
+import Loading from "@/components/Loading";
 import SearchArea from "@/components/SearchArea";
 import StarshipList from "@/components/StarshipList";
 import Pagination from "@/components/Pagination";
@@ -18,7 +20,8 @@ export default {
   components: {
     StarshipList,
     Pagination,
-    SearchArea
+    SearchArea,
+    Loading
   },
   mounted() {},
   data() {
@@ -32,11 +35,13 @@ export default {
   methods: {
     async setStarshipData(handlerFunction, ...arg) {
       this.isLoading = true;
-      const data = await handlerFunction(arg);
-      const { previous, next, results } = data;
-      this.starships = results;
-      this.pagination = { previous, next };
-      this.isLoading = false;
+      setTimeout( async() => {
+        const data = await handlerFunction(arg);
+        const { previous, next, results } = data;
+        this.starships = results;
+        this.pagination = { previous, next };
+        this.isLoading = false;
+      }, 500);
     },
     fetchStarships(){
       this.setStarshipData(getStarships);

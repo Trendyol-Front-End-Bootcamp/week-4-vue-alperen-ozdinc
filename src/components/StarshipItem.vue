@@ -78,7 +78,7 @@ export default {
 
   .starship-data {
     color: #fff;
-    padding-right: 30px;
+    text-align: center;
     .starship-data-title {
       color: #ffe81f;
     }
