@@ -1,5 +1,7 @@
 # week-4-vue-alperen-ozdinc
 
+### 🎆✨ Live demo => [https://star-wars-starships.netlify.app/](https://star-wars-starships.netlify.app/)
+
 ## Project setup
 ```
 npm install
